@@ -3,10 +3,9 @@ Solve a 0-1 knapsack problem.
 We are going to use the classes defined in knapsack_optimization.py.
 
 . Dynamic programming 
-. Genetic algorithm (To be added)
+. Genetic algorithm 
 '''
 import os 
-import numpy as np 
 from knapsack_optimization import dynamic_programming, genetic_algorithm
 import logging
 
