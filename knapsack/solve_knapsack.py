@@ -6,7 +6,8 @@ We are going to use the classes defined in knapsack_optimization.py.
 . Genetic algorithm (To be added)
 '''
 import os 
-from knapsack_optimization import dynamic_programming
+import numpy as np 
+from knapsack_optimization import dynamic_programming, genetic_algorithm
 import logging
 
 def main():
@@ -19,13 +20,29 @@ def main():
 
     logging.info('Optimize using dynamic programming...')
     try:
-        solver = dynamic_programming(items, capacity)
-        solver.optimize()
+        dp_solver = dynamic_programming(items, capacity)
+        dp_solver.optimize()
 
-        logging.info(f'Optimal value: {solver.optimal_value}')
-        logging.info(f'Selected items: {sorted([item_names[i] for i in solver.selected_items])}')
+        logging.info(f'Optimal value: {dp_solver.optimal_value}')
+        logging.info(f'Selected items: {sorted([item_names[i] for i in dp_solver.selected_items])}')
     except Exception:
         logging.error('Dynamic programming failed :', exc_info = True)
+    
+
+    logging.info('Optimizing using genetic algorithm...')
+    try:
+        ga_solver = genetic_algorithm(items,
+                                   capacity,
+                                   population_size=20,
+                                   n_generations = 100,
+                                   crossover_rate = 0.85,
+                                   mutation_rate = 0.2)
+        ga_solver.optimize()
+
+        logging.info(f'Optimal value: {ga_solver.best_fitness}')
+        logging.info(f'Selected items: {[name for name, selected in zip(item_names, ga_solver.best_chromosome) if selected == 1 ]}')
+    except Exception:
+        logging.error('Genetic algorithm failed :', exc_info = True)
 
 def set_logging():
     if 'logs.log' in os.listdir(os.getcwd()):
