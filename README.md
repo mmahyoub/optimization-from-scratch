@@ -4,4 +4,4 @@ Contents:
 1. [0-1 knapsack problem using dynamic programming.](https://github.com/mmahyoub/optimization-from-scratch/tree/main/knapsack)
 2. [0-1 knapsack problem using genetic algorithm.](https://github.com/mmahyoub/optimization-from-scratch/tree/main/knapsack)
 3. [Rosenbrock function minimization using genetic algorithm.](https://github.com/mmahyoub/optimization-from-scratch/tree/main/genetic-algorithm) 
-<img src="https://github.com/mmahyoub/optimization-from-scratch/blob/main/genetic-algorithm/ga_rosenbrock.jpg" alt="Rosenbrock" width="200"/>
+<img src="https://github.com/mmahyoub/optimization-from-scratch/blob/main/genetic-algorithm/ga_rosenbrock.jpg" alt="Rosenbrock" width="600"/>
